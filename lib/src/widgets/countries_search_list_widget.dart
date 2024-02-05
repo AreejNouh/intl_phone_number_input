@@ -24,8 +24,8 @@ class CountrySearchListWidget extends StatefulWidget {
     this.showFlags,
     this.useEmoji,
     this.autoFocus = false,
-    this.subtitleTextStyle = TextStyle(color: Colors.black),
-    this.titleTextStyle = TextStyle(color: Colors.black),
+    this.subtitleTextStyle,
+    this.titleTextStyle,
   });
 
   @override
