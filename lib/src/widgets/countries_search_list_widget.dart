@@ -12,6 +12,9 @@ class CountrySearchListWidget extends StatefulWidget {
   final bool autoFocus;
   final bool? showFlags;
   final bool? useEmoji;
+  final TextStyle? titleTextStyle;
+  final TextStyle? subtitleTextStyle;
+
 
   CountrySearchListWidget(
     this.countries,
@@ -21,6 +24,8 @@ class CountrySearchListWidget extends StatefulWidget {
     this.showFlags,
     this.useEmoji,
     this.autoFocus = false,
+    this.subtitleTextStyle = TextStyle(color: Colors.black),
+    this.titleTextStyle = TextStyle(color: Colors.black),
   });
 
   @override
@@ -92,6 +97,8 @@ class _CountrySearchListWidgetState extends State<CountrySearchListWidget> {
                 locale: widget.locale,
                 showFlags: widget.showFlags!,
                 useEmoji: widget.useEmoji!,
+                titleTextStyle: widget.titleTextStyle,
+                subtitleTextStyle: widget.subtitleTextStyle,
               );
               // return ListTile(
               //   key: Key(TestHelper.countryItemKeyValue(country.alpha2Code)),
@@ -136,6 +143,8 @@ class DirectionalCountryListTile extends StatelessWidget {
   final String? locale;
   final bool showFlags;
   final bool useEmoji;
+  final TextStyle titleTextStyle;
+  final TextStyle subtitleTextStyle;
 
   const DirectionalCountryListTile({
     Key? key,
@@ -143,6 +152,8 @@ class DirectionalCountryListTile extends StatelessWidget {
     required this.locale,
     required this.showFlags,
     required this.useEmoji,
+    required this.titleTextStyle,
+    required this.subtitleTextStyle,
   }) : super(key: key);
 
   @override
@@ -156,6 +167,7 @@ class DirectionalCountryListTile extends StatelessWidget {
           '${Utils.getCountryName(country, locale)}',
           textDirection: Directionality.of(context),
           textAlign: TextAlign.start,
+          style: titleTextStyle,
         ),
       ),
       subtitle: Align(
@@ -164,6 +176,7 @@ class DirectionalCountryListTile extends StatelessWidget {
           '${country.dialCode ?? ''}',
           textDirection: TextDirection.ltr,
           textAlign: TextAlign.start,
+          style: subtitleTextStyle,
         ),
       ),
       onTap: () => Navigator.of(context).pop(country),

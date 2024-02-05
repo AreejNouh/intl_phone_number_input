@@ -17,6 +17,8 @@ class SelectorButton extends StatelessWidget {
   final String? locale;
   final bool isEnabled;
   final bool isScrollControlled;
+  final TextStyle titleTextStyle;
+  final TextStyle subtitleTextStyle;
 
   final ValueChanged<Country?> onCountryChanged;
 
@@ -127,14 +129,13 @@ class SelectorButton extends StatelessWidget {
           textDirection: Directionality.of(inheritedContext),
           child: Container(
             width: double.maxFinite,
-            child: CountrySearchListWidget(
-              countries,
-              locale,
-              searchBoxDecoration: searchBoxDecoration,
-              showFlags: selectorConfig.showFlags,
-              useEmoji: selectorConfig.useEmoji,
-              autoFocus: autoFocusSearchField,
-            ),
+            child: CountrySearchListWidget(countries, locale,
+                searchBoxDecoration: searchBoxDecoration,
+                showFlags: selectorConfig.showFlags,
+                useEmoji: selectorConfig.useEmoji,
+                autoFocus: autoFocusSearchField,
+                titleTextStyle: titleTextStyle,
+                subtitleTextStyle: subtitleTextStyle),
           ),
         ),
       ),
@@ -175,15 +176,14 @@ class SelectorButton extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: CountrySearchListWidget(
-                      countries,
-                      locale,
-                      searchBoxDecoration: searchBoxDecoration,
-                      scrollController: controller,
-                      showFlags: selectorConfig.showFlags,
-                      useEmoji: selectorConfig.useEmoji,
-                      autoFocus: autoFocusSearchField,
-                    ),
+                    child: CountrySearchListWidget(countries, locale,
+                        searchBoxDecoration: searchBoxDecoration,
+                        scrollController: controller,
+                        showFlags: selectorConfig.showFlags,
+                        useEmoji: selectorConfig.useEmoji,
+                        autoFocus: autoFocusSearchField,
+                        titleTextStyle: titleTextStyle,
+                        subtitleTextStyle: subtitleTextStyle),
                   ),
                 );
               },
