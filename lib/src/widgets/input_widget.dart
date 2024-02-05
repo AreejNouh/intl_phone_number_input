@@ -73,8 +73,8 @@ class InternationalPhoneNumberInput extends StatefulWidget {
 
   final TextStyle? textStyle;
   final TextStyle? selectorTextStyle;
-  final TextStyle? titleTextStyle;
-  final TextStyle? subtitleTextStyle;
+  final TextStyle titleTextStyle;
+  final TextStyle subtitleTextStyle;
   final InputBorder? inputBorder;
   final InputDecoration? inputDecoration;
   final InputDecoration? searchBoxDecoration;
@@ -117,8 +117,8 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.locale,
       this.textStyle,
       this.selectorTextStyle,
-      this.titleTextStyle,
-      this.subtitleTextStyle,
+      required this.titleTextStyle,
+      required this.subtitleTextStyle,
       this.inputBorder,
       this.inputDecoration,
       this.searchBoxDecoration,
@@ -302,8 +302,6 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
         onCountryChanged: onCountryChanged,
         selectorConfig: widget.selectorConfig,
         selectorTextStyle: widget.selectorTextStyle,
-        titleTextStyle: widget.titleTextStyle,
-        subtitleTextStyle: widget.subtitleTextStyle,
         searchBoxDecoration: widget.searchBoxDecoration,
         locale: locale,
         isEnabled: widget.isEnabled,

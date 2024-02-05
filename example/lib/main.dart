@@ -44,6 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             InternationalPhoneNumberInput(
+              subtitleTextStyle: TextStyle(color: Colors.black54),
+              titleTextStyle: TextStyle(color: Colors.black),
               onInputChanged: (PhoneNumber number) {
                 print(number.phoneNumber);
               },

@@ -17,8 +17,8 @@ class SelectorButton extends StatelessWidget {
   final String? locale;
   final bool isEnabled;
   final bool isScrollControlled;
-  final TextStyle? titleTextStyle;
-  final TextStyle? subtitleTextStyle;
+  final TextStyle titleTextStyle;
+  final TextStyle subtitleTextStyle;
 
   final ValueChanged<Country?> onCountryChanged;
 
