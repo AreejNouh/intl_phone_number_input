@@ -143,8 +143,8 @@ class DirectionalCountryListTile extends StatelessWidget {
   final String? locale;
   final bool showFlags;
   final bool useEmoji;
-  final TextStyle titleTextStyle;
-  final TextStyle subtitleTextStyle;
+  final TextStyle? titleTextStyle;
+  final TextStyle? subtitleTextStyle;
 
   const DirectionalCountryListTile({
     Key? key,

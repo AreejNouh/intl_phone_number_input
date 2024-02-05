@@ -302,6 +302,8 @@ class _InputWidgetState extends State<InternationalPhoneNumberInput> {
         onCountryChanged: onCountryChanged,
         selectorConfig: widget.selectorConfig,
         selectorTextStyle: widget.selectorTextStyle,
+        titleTextStyle: widget.titleTextStyle,
+        subtitleTextStyle: widget.subtitleTextStyle,
         searchBoxDecoration: widget.searchBoxDecoration,
         locale: locale,
         isEnabled: widget.isEnabled,
